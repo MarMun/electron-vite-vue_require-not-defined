@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getTextLength } from './bufferTest.js'
 import HelloWorld from './components/HelloWorld.vue'
 
 console.log("[App.vue]", `Hello world from Electron ${process.versions.electron}!`)
@@ -16,11 +17,10 @@ console.log("[App.vue]", `Hello world from Electron ${process.versions.electron}
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Electron + Vite + Vue" />
   <div class="flex-center">
-    Place static files into the <code>/public</code> folder
-    <img style="width:5em;" src="/node.svg" alt="Node logo">
+    Buffer test: {{ getTextLength('this is a buffer test') }}
   </div>
+  <HelloWorld msg="Electron + Vite + Vue" />
 </template>
 
 <style>
@@ -28,6 +28,7 @@ console.log("[App.vue]", `Hello world from Electron ${process.versions.electron}
   display: flex;
   align-items: center;
   justify-content: center;
+  background: red;
 }
 
 .logo {
